@@ -1,0 +1,746 @@
+Please provide 3 weights (1..5) for Academics, Research and Publications
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 7
+Overall rating: 0
+Current rank: 0
+********
+School name: Stanford
+Academic program: 8
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 9
+Overall rating: 0
+Current rank: 0
+********
+School name: CMU
+Academic program: 7
+Effectiveness in educating research scholars: 8
+Impact of its faculty publications: 6
+Overall rating: 0
+Current rank: 0
+********
+School name: UC Berkeley
+Academic program: 9
+Effectiveness in educating research scholars: 9
+Impact of its faculty publications: 9
+Overall rating: 0
+Current rank: 0
+Please provide 3 weights (1..5) for Academics, Research and Publications
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 7
+Overall rating: 108
+Current rank: 0
+********
+School name: Stanford
+Academic program: 8
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 9
+Overall rating: 110
+Current rank: 0
+********
+School name: CMU
+Academic program: 7
+Effectiveness in educating research scholars: 8
+Impact of its faculty publications: 6
+Overall rating: 85
+Current rank: 0
+********
+School name: UC Berkeley
+Academic program: 9
+Effectiveness in educating research scholars: 9
+Impact of its faculty publications: 9
+Overall rating: 108
+Current rank: 0
+
+Ranking of schools from highest to lowest using Academics as a factor: 
+MIT
+UC Berkeley
+Stanford
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 7
+Overall rating: 108
+Current rank: 0
+********
+School name: Stanford
+Academic program: 8
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 9
+Overall rating: 110
+Current rank: 0
+********
+School name: CMU
+Academic program: 7
+Effectiveness in educating research scholars: 8
+Impact of its faculty publications: 6
+Overall rating: 85
+Current rank: 0
+********
+School name: UC Berkeley
+Academic program: 9
+Effectiveness in educating research scholars: 9
+Impact of its faculty publications: 9
+Overall rating: 108
+Current rank: 0
+
+Ranking of schools from highest to lowest using Academics as a factor: 
+MIT
+UC Berkeley
+Stanford
+Ranking of schools from highest to lowest using Research as a factor: 
+Stanford
+MIT
+UC Berkeley
+Ranking of schools from highest to lowest using Publications as a factor: 
+UC Berkeley
+Stanford
+MIT
+Ranking of schools from highest to lowest using Overall as a factor: 
+Stanford
+MIT
+UC Berkeley
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 7
+Overall rating: 108
+Current rank: 0
+********
+School name: Stanford
+Academic program: 8
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 9
+Overall rating: 110
+Current rank: 0
+********
+School name: CMU
+Academic program: 7
+Effectiveness in educating research scholars: 8
+Impact of its faculty publications: 6
+Overall rating: 85
+Current rank: 0
+********
+School name: UC Berkeley
+Academic program: 9
+Effectiveness in educating research scholars: 9
+Impact of its faculty publications: 9
+Overall rating: 108
+Current rank: 0
+
+Ranking of schools from highest to lowest using Academics as a factor: 
+MIT
+UC Berkeley
+Stanford
+CMU
+Ranking of schools from highest to lowest using Research as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+Ranking of schools from highest to lowest using Publications as a factor: 
+UC Berkeley
+Stanford
+MIT
+CMU
+Ranking of schools from highest to lowest using Overall as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 7
+Overall rating: 108
+Current rank: 0
+********
+School name: Stanford
+Academic program: 8
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 9
+Overall rating: 110
+Current rank: 0
+********
+School name: CMU
+Academic program: 7
+Effectiveness in educating research scholars: 8
+Impact of its faculty publications: 6
+Overall rating: 85
+Current rank: 0
+********
+School name: UC Berkeley
+Academic program: 9
+Effectiveness in educating research scholars: 9
+Impact of its faculty publications: 9
+Overall rating: 108
+Current rank: 0
+
+Ranking of schools from highest to lowest using Academics as a factor: 
+MIT
+UC Berkeley
+Stanford
+CMU
+Ranking of schools from highest to lowest using Research as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+Ranking of schools from highest to lowest using Publications as a factor: 
+UC Berkeley
+Stanford
+MIT
+CMU
+Ranking of schools from highest to lowest using Overall as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 7
+Overall rating: 108
+Current rank: 0
+********
+School name: Stanford
+Academic program: 8
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 9
+Overall rating: 110
+Current rank: 0
+********
+School name: CMU
+Academic program: 7
+Effectiveness in educating research scholars: 8
+Impact of its faculty publications: 6
+Overall rating: 85
+Current rank: 0
+********
+School name: UC Berkeley
+Academic program: 9
+Effectiveness in educating research scholars: 9
+Impact of its faculty publications: 9
+Overall rating: 108
+Current rank: 0
+
+
+Ranking of schools from highest to lowest using Academics as a factor: 
+MIT
+UC Berkeley
+Stanford
+CMU
+
+Ranking of schools from highest to lowest using Research as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+
+Ranking of schools from highest to lowest using Publications as a factor: 
+UC Berkeley
+Stanford
+MIT
+CMU
+
+Ranking of schools from highest to lowest using Overall as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+Please provide 3 weights (1..5) for Academics, Research and Publications
+
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 7
+Overall rating: 108
+Current rank: 0
+
+********
+School name: Stanford
+Academic program: 8
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 9
+Overall rating: 110
+Current rank: 0
+
+********
+School name: CMU
+Academic program: 7
+Effectiveness in educating research scholars: 8
+Impact of its faculty publications: 6
+Overall rating: 85
+Current rank: 0
+
+********
+School name: UC Berkeley
+Academic program: 9
+Effectiveness in educating research scholars: 9
+Impact of its faculty publications: 9
+Overall rating: 108
+Current rank: 0
+
+
+Ranking of schools from highest to lowest using Academics as a factor: 
+MIT
+UC Berkeley
+Stanford
+CMU
+
+Ranking of schools from highest to lowest using Research as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+
+Ranking of schools from highest to lowest using Publications as a factor: 
+UC Berkeley
+Stanford
+MIT
+CMU
+
+Ranking of schools from highest to lowest using Overall as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+Please provide 3 weights (1..5) for Academics, Research and Publications
+There are 4 schools in the database:
+
+
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 7
+Overall rating: 108
+Current rank: 0
+
+********
+School name: Stanford
+Academic program: 8
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 9
+Overall rating: 110
+Current rank: 0
+
+********
+School name: CMU
+Academic program: 7
+Effectiveness in educating research scholars: 8
+Impact of its faculty publications: 6
+Overall rating: 85
+Current rank: 0
+
+********
+School name: UC Berkeley
+Academic program: 9
+Effectiveness in educating research scholars: 9
+Impact of its faculty publications: 9
+Overall rating: 108
+Current rank: 0
+
+
+Ranking of schools from highest to lowest using Academics as a factor: 
+MIT
+UC Berkeley
+Stanford
+CMU
+
+Ranking of schools from highest to lowest using Research as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+
+Ranking of schools from highest to lowest using Publications as a factor: 
+UC Berkeley
+Stanford
+MIT
+CMU
+
+Ranking of schools from highest to lowest using Overall as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+There are 4 schools in the database:
+
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 7
+Overall rating: 108
+Current rank: 0
+
+********
+School name: Stanford
+Academic program: 8
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 9
+Overall rating: 110
+Current rank: 0
+
+********
+School name: CMU
+Academic program: 7
+Effectiveness in educating research scholars: 8
+Impact of its faculty publications: 6
+Overall rating: 85
+Current rank: 0
+
+********
+School name: UC Berkeley
+Academic program: 9
+Effectiveness in educating research scholars: 9
+Impact of its faculty publications: 9
+Overall rating: 108
+Current rank: 0
+
+
+Ranking of schools from highest to lowest using Academics as a factor: 
+MIT
+UC Berkeley
+Stanford
+CMU
+
+Ranking of schools from highest to lowest using Research as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+
+Ranking of schools from highest to lowest using Publications as a factor: 
+UC Berkeley
+Stanford
+MIT
+CMU
+
+Ranking of schools from highest to lowest using Overall as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+
+*********
+Account Number: 72271
+Account Balance: 30
+Minimum balance: 10
+Your account balance is below the minimum balance.Therefore, an overdraft fee of $35 is incurred.
+
+*********
+Account Number: 13784
+Account Balance: -305
+Minimum balance: 10
+There are 4 schools in the database:
+
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 7
+Overall rating: 108
+Current rank: 0
+
+********
+School name: Stanford
+Academic program: 8
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 9
+Overall rating: 110
+Current rank: 0
+
+********
+School name: CMU
+Academic program: 7
+Effectiveness in educating research scholars: 8
+Impact of its faculty publications: 6
+Overall rating: 85
+Current rank: 0
+
+********
+School name: UC Berkeley
+Academic program: 9
+Effectiveness in educating research scholars: 9
+Impact of its faculty publications: 9
+Overall rating: 108
+Current rank: 0
+
+
+Ranking of schools from highest to lowest using Academics as a factor: 
+MIT
+UC Berkeley
+Stanford
+CMU
+
+Ranking of schools from highest to lowest using Research as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+
+Ranking of schools from highest to lowest using Publications as a factor: 
+UC Berkeley
+Stanford
+MIT
+CMU
+
+Ranking of schools from highest to lowest using Overall as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+Your account balance is below the minimum balance.Therefore, an overdraft fee of $35 is incurred.
+
+*********
+Account Number: 33187
+Account Balance: -305
+Minimum balance: 10
+Your account balance is below the minimum balance.Therefore, an overdraft fee of $35 is incurred.
+
+*********
+Account Number: 65985
+Account Balance: -305
+Minimum balance: 10
+Your account balance is below the minimum balance.Therefore, an overdraft fee of $35 is incurred.
+
+*********
+Account Number: 36216
+Account Balance: -305
+Minimum balance: 10
+Your account balance is below the minimum balance.Therefore, an overdraft fee of $35 is incurred.
+
+*********
+Account Number: 05971
+Account Balance: -305
+Minimum balance: 10
+Static Error: This class does not have a static void main method accepting String[].
+<top of stack>
+MATLAB
+<bottom of stack>
+<top of stack>
+MATLAB
+<bottom of stack>
+<top of stack>
+Comp Organization
+MATLAB
+<bottom of stack>
+<top of stack>
+MATLAB
+<bottom of stack>
+<top of stack>
+Comp Organization
+MATLAB
+<bottom of stack>
+Comp Organization
+<top of stack>
+MATLAB
+<bottom of stack>
+<top of stack>
+Comp Organization and Design
+MATLAB
+<bottom of stack>
+Comp Organization and Design
+jva
+baana
+melon and lemon are anagrams
+hello and hello are not anagrams
+Your account balance is below the minimum balance.Therefore, an overdraft fee of $35 is incurred.
+
+*********
+Account Number: 97881
+Account Balance: -205
+Minimum balance: 10
+
+*********
+Account Number: 50199
+Account Balance: 130.596
+Annual Interest rate: 5.5
+
+*********
+Account Number: 56895
+Account Balance: 30
+Minimum balance: 10
+
+*********
+Account Number: 37410
+Account Balance: 30
+Annual Interest rate: 5.5
+Your account balance is below the minimum balance.Therefore, an overdraft fee of $35 is incurred.
+
+*********
+Account Number: 56895
+Account Balance: -105
+Minimum balance: 10
+Not able to withdraw because there is not enought balance in your account.
+
+*********
+Account Number: 37410
+Account Balance: 30
+Annual Interest rate: 5.5
+
+*********
+Account Number: 37410
+Account Balance: 130.596
+Annual Interest rate: 5.5
+
+*********
+Account Number: 05698
+Account Balance: 30
+Minimum balance: 10
+
+*********
+Account Number: 90332
+Account Balance: 30
+Annual Interest rate: 5.5
+
+Your account balance is below the minimum balance.Therefore, an overdraft fee of $35 is incurred.
+
+*********
+Account Number: 05698
+Account Balance: -105
+Minimum balance: 10
+Not able to withdraw because there is not enought balance in your account.
+
+*********
+Account Number: 90332
+Account Balance: 30
+Annual Interest rate: 5.5
+
+*********
+Account Number: 90332
+Account Balance: 130.596
+Annual Interest rate: 5.5
+
+*********
+Account Number: 56959
+Account Balance: 30
+Minimum balance: 10
+
+*********
+Account Number: 84578
+Account Balance: 30
+Annual Interest rate: 5.5
+
+Your account balance is below the minimum balance.Therefore, an overdraft fee of $35 is incurred.
+
+*********
+Account Number: 56959
+Account Balance: -105
+Minimum balance: 10
+
+Not able to withdraw because there is not enought balance in your account.
+
+*********
+Account Number: 84578
+Account Balance: 30
+Annual Interest rate: 5.5
+
+*********
+Account Number: 84578
+Account Balance: 130.596
+Annual Interest rate: 5.5
+
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 10
+Overall rating: 120
+Current rank: 0
+
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 10
+Overall rating: 120
+Current rank: 0
+
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 10
+Overall rating: 120
+Current rank: 0
+
+********
+School name: Wellesley
+Academic program: 9
+Effectiveness in educating research scholars: 9
+Impact of its faculty publications: 9
+Overall rating: 108
+Current rank: 0
+Please provide 3 weights (1..5) for Academics, Research and Publications
+Please provide 3 weights (1..5) for Academics, Research and Publications
+There are 4 schools in the database:
+
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 7
+Overall rating: 111
+Current rank: 0
+
+********
+School name: Stanford
+Academic program: 8
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 9
+Overall rating: 107
+Current rank: 0
+
+********
+School name: CMU
+Academic program: 7
+Effectiveness in educating research scholars: 8
+Impact of its faculty publications: 6
+Overall rating: 85
+Current rank: 0
+
+********
+School name: UC Berkeley
+Academic program: 9
+Effectiveness in educating research scholars: 9
+Impact of its faculty publications: 9
+Overall rating: 108
+Current rank: 0
+
+
+Ranking of schools from highest to lowest using Academics as a factor: 
+MIT
+UC Berkeley
+Stanford
+CMU
+
+Ranking of schools from highest to lowest using Research as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+
+Ranking of schools from highest to lowest using Publications as a factor: 
+UC Berkeley
+Stanford
+MIT
+CMU
+
+Ranking of schools from highest to lowest using Overall as a factor: 
+MIT
+UC Berkeley
+Stanford
+CMU

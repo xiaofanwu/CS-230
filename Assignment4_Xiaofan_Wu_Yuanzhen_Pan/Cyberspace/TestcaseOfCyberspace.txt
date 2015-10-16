@@ -1,0 +1,44 @@
+//test if there is duplicate urls
+//check if enter control d in a blank space
+
+Please enter URLs (without spaces) below; end your list with ctrl-D:
+http://www.wellesley.edu
+http://www.google.com
+http://www.google.com
+http://www.facebook.com
+http://www.netflix.com
+http://results from visiting 5 webpages 
+http://www.netflix.com	:0	
+http://www.facebook.com	:0	
+http://www.google.com	:8	<!doctype html><html
+http://www.google.com	:8	<!doctype html><html
+http://www.wellesley.edu	:1305	<!DOCTYPE html PUBLI
+
+//test if enter control d right after an url.
+//Both test if double size works.
+Please enter URLs (without spaces) below; end your list with ctrl-D:
+http://www.wellesley.edu
+http://www.comcast.com
+http://www.facebook.com
+http://www.baidu.com
+http://www.qq.comhttp://results from visiting 5 webpages 
+http://www.facebook.com	:0	
+http://www.baidu.com	:35	<!DOCTYPE html><!--S
+http://www.wellesley.edu	:1301	<!DOCTYPE html PUBLI
+http://www.comcast.com	:1647	<!DOCTYPE html><html
+http://www.qq.com	:9345	<!DOCTYPE html><html
+
+//test the correct text
+results from visiting 7 webpages 
+http://www.netflix.com	:0	
+http://www.cnn.com	:1	<!DOCTYPE html><html
+http://www.google.com	:8	<!doctype html><html
+http://www.bing.com	:23	<!DOCTYPE html PUBLI
+http://www.horoscope.com	:98	<?xml version="1.0"?
+http://www.noaa.gov	:670	<!DOCTYPE html PUBLI
+http://www.wellesley.edu	:1305	<!DOCTYPE html PUBLI
+
+//check if entered wrong text
+java.io.FileNotFoundException: lol.txt (No such file or directory)
+results from visiting 0 webpages 
+

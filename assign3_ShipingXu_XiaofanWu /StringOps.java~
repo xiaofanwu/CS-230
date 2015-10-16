@@ -1,0 +1,41 @@
+/* StringOps.java
+ * CS230 Assignment3 Task1: Fun with Strings
+ * Written by: Shiping Xu and Xiaofan Wu
+ */
+
+public class StringOps {  
+
+  public static String removeChar (String S, char ch) {
+    if(S.charAt(0) == ch) {
+      return S.substring(1); 
+    } else if (S.length() == 1 && S.charAt(0) != ch) {
+      return S;
+    } else {
+      return S.charAt(0) + removeChar(S.substring(1), ch);
+    }
+  }  
+  
+  
+  public static void testAnagram (String word1, String word2) { 
+    if (word1.length() != word2.length()) {
+      System.out.println(word1 + " and " + word2 + " are not anagrams");
+    } else if (word1.length() == 1 && word1.equals(word2)) {
+      System.out.println(word1 + " and " + word2 + " are anagrams");
+    } else {
+      String word2new;
+      word2new = removeChar(word2, word1.charAt(0));      
+      testAnagram(word1.substring(1),word2new);  
+    }
+    
+  }    
+
+    
+// main method, test other two methods   
+  public static void main (String[] args) {
+    System.out.println(removeChar("java", 'a'));
+    System.out.println(removeChar("banana", 'n'));
+    testAnagram("melon","lemon");
+    testAnagram("hello", "world");
+  }
+  
+}

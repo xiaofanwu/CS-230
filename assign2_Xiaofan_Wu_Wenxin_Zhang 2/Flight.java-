@@ -1,0 +1,92 @@
+
+
+public class Flight{
+  private String name;
+  private int flightNo; //should it be int or string
+  private String origin;
+  private String destination;
+  
+  public Flight(String name, int flightNo,String origin, String destination){
+    this.name=name;
+    this.flightNo=flightNo;
+    this.origin=origin;
+    this.destination=destination;
+  }
+  
+  public String getName(){
+    return name;
+  }
+  
+  public int getNo(){
+    return flightNo;
+  }
+  
+  public String getOri(){
+    return origin;
+  }
+  
+  public String getDes(){
+    return destination;
+  }
+  
+  public void setName(String newName){
+    name=newName;
+  }
+  
+  public void setNo(int newNo){
+    flightNo=newNo;
+  }
+  
+  public void setOri(String newOri){
+    origin=newOri;
+  }
+  
+  public void setDes(String newDes){
+    destination=newDes;
+  }
+  
+    
+  // I stands for input
+  public static readFlight(){
+    Scanner scan= new Scanner(System.in); // system.in means read sth from the keyboard
+    System.out.print("Please enter the flight name:");
+    String nameI=scan.nextLine();
+    System.out.print("Please enter the flight number:");
+    String numberI=scan.nextLine();
+    System.out.print("Please enter the flight origin:");
+    String originI=scan.nextLine();
+    System.out.print("Please enter the flight destination:");
+    String destinationI=scan.nextLine();
+    Flight newflight= Flight(nameI,numberI,originI,destinationI);
+    return newflight;
+  }
+    
+  public boolean stopOver(Flight one, Flight two){
+    if (one.getOri()==two.getDes()||one.getDes()==twp.getOri()){
+      return true;
+    }
+    else{
+    return false;
+  }
+  }
+  
+  public String toString(){
+    return (name + " "+flightNo+" Origin: "+origin+" destination: "+destination);
+  }
+  
+  public static void main(String[] args){
+    Flight first=readFlight();
+    Flight second=readFlight();
+    System.out.println(first.toString);
+    System.out.println(second);
+    if stopOver(first,second){
+      System.out.println("These two flight share a stop city.");
+    }else{
+      system.out.println("These two flight do not share a stop city.");
+    }
+  }
+}
+
+      
+    
+    

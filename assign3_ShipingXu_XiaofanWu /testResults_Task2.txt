@@ -1,0 +1,28 @@
+*********
+Account Number: 56959
+Account Balance: 30
+Minimum balance: 10
+
+*********
+Account Number: 84578
+Account Balance: 30
+Annual Interest rate: 5.5
+
+Your account balance is below the minimum balance.Therefore, an overdraft fee of $35 is incurred.
+
+*********
+Account Number: 56959
+Account Balance: -105
+Minimum balance: 10
+
+Not able to withdraw because there is not enough balance in your account.
+
+*********
+Account Number: 84578
+Account Balance: 30
+Annual Interest rate: 5.5
+
+*********
+Account Number: 84578
+Account Balance: 130.596
+Annual Interest rate: 5.5

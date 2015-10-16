@@ -1,0 +1,4 @@
+jva
+baana
+melon and lemon are anagrams
+hello and hello are not anagrams

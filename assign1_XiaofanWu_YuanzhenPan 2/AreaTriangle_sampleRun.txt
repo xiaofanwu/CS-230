@@ -1,0 +1,16 @@
+Please enter the length of the first side of a triangle:
+3
+Please enter the length of the second side of a triangle:
+4
+Please enter the length of the third side of a triangle:
+5
+Triangle is not isosceles
+The area of the triangle is 6.0
+Please enter the length of the first side of a triangle:
+5.5
+Please enter the length of the second side of a triangle:
+3.7
+Please enter the length of the third side of a triangle:
+5.5
+Triangle is isosceles.
+The area of the triangle is 9.582124960049308

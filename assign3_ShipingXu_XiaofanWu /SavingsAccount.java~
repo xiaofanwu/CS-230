@@ -1,0 +1,39 @@
+/* SavingsAccount.java
+ * CS230 Assignment #3 Task2
+ * Written by: Shiping Xu & Xiaofan Wu
+ * September 30th, 2015
+ */
+
+import java.text.DecimalFormat; // used to format output
+
+public class SavingsAccount extends Account {
+  // instance variables
+  private double annualInterestRate;
+  
+  // constructor
+  public SavingsAccount(double deposit, double rate) {
+    super(deposit);
+    this.annualInterestRate = rate;    
+  }
+  
+  
+  //withdraw method
+  public void withdraw(double amount) {
+    if (accountBalance > amount) 
+      accountBalance = accountBalance - amount;
+  }
+  
+  //add monthly interest
+  public void calculateBalance() {
+    accountBalance = accountBalance + (accountBalance*((annualInterestRate/100.)/12.));
+  }
+  
+  // toString() displays eveything Account displays plus the interest rate
+  public String toString() {
+    DecimalFormat fmt = new DecimalFormat("0.###");
+    String s = super.toString();
+    s += "\nAnnual Interest rate: " + fmt.format(annualInterestRate);
+    return s;
+  }
+  
+}

@@ -1,0 +1,46 @@
+/* Account.java
+ * CS230 Assignment #3 Task 2: Create your own Bank
+ * Written by: Shiping Xu & Xiaofan Wu
+ * September 30, 2015
+ */
+
+
+import java.text.DecimalFormat;  //used to format output
+import java.util.*;
+
+public abstract class Account {
+  // instance variables
+  protected String accountNum;
+  protected double accountBalance;
+  
+  // constructor
+  public Account(double deposit) {
+    Random rad = new Random(); // create a new random object
+    // generate a new account number between 10000 and 99999
+    this.accountNum = String.valueOf((int)(rad.nextFloat()*90000+10000));
+    this.accountBalance = 0; // set initial balance to 0    
+  }
+ 
+  
+  // deposit method
+  final public void deposit(double deposit) {
+    accountBalance = accountBalance + deposit;
+  }
+  
+  //toString() 
+  public String toString() {
+    DecimalFormat fmt = new DecimalFormat("0.###");
+    String s = "\n*********\nAccount Number: " + this.accountNum;
+    s += "\nAccount Balance: " + fmt.format(this.accountBalance);
+    return s;
+  }
+  
+  // abstract withdraw method
+  abstract public void withdraw(double amount);   
+  
+  
+  }
+
+
+
+

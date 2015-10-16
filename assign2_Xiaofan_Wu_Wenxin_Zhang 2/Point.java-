@@ -1,0 +1,71 @@
+
+
+public class Point{
+  
+  private double x;
+  private double y;
+  
+  
+  public double getX(){
+    return x;
+  }
+  
+  public double getY(){
+    return y;
+  }
+  public Point(double x, double y){
+    this.x=x;
+    this.y=y;
+  }
+  
+//  public getXY(){
+//    return (x,y);
+//  }
+//  
+  public void setXY(double newX, double newY){
+    x=newX;
+    y=newY;
+  }
+  
+  public double findDistance(Point a){
+    
+    double distance = Math.sqrt(Math.pow(a.getX()-x,2)+Math.pow(a.getY()-y,2));
+    return distance;
+  }
+  
+  public String toString(){
+    return "The current point is ("+x+","+y+").";
+  }
+ 
+    
+  public boolean areEquidistant(Point one, Point two){
+    final double TOLERANCE= 0.01;
+    
+    double diffOne = findDistance (one);
+    double diffTwo=findDistance(two);
+
+    if (Math.abs(diffOne-diffTwo)<TOLERANCE){
+      return true;
+    }
+    return false;
+  }
+  
+//  public static Point readPoint(){
+//    
+//  }
+    
+    
+    
+  
+  public static void main(String[] args){
+    
+    Point firstP= new Point(3.5,7);
+    Point secondP= new Point(9.3,6.4);
+    Point thirdP= new Point(5,3);
+    System.out.println(firstP);
+    System.out.println(secondP);
+  }
+}
+    
+  
+  

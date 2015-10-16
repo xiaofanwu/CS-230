@@ -1,0 +1,101 @@
+/* GradSchools.java
+ * CS230 Assignment #3 Task3 - subtask3
+ * Written by: Shiping Xu & Xiaofan Wu
+ * September 30, 2015
+ */
+
+public class GradSchools {
+  // instance variables
+  private School[] gradSchools; 
+//  private int weight1, weight2, weight3;
+  private int count;
+  
+  // constructor
+  public GradSchools() {
+    gradSchools = new School[100];
+    count = 0;
+  }
+  
+  // toString()
+  public String toString() {
+    String s = "";
+    for (int i=0; i<count; i++) {
+    s += (gradSchools[i] + "\n");
+    }
+    return s;
+  }
+  
+  public void addSchool(String name, int academics, int effectiveness, int impact) {
+    if (count < gradSchools.length) {
+    gradSchools[count] = new School(name, academics, effectiveness, impact);
+    count++;
+    } else {
+      System.out.println("Not enough space in the Graduate School.");
+    }
+  }
+  
+  public int[] computeRatings(int weight1, int weight2, int weight3) {
+    int[] overallRating = new int[count];
+    for (int i=0; i<count; i++) {
+      overallRating[i] = gradSchools[i].computeRating(weight1, weight2, weight3);
+    } 
+    return overallRating;
+  }
+  
+  public void rankSchool(String input) {
+    System.out.println("Ranking of schools from highest to lowest using " + input + 
+                       " as a factor: ");
+    
+    for (int i=0; i<count; i++) {
+      if (input.equals("Academics")) {
+        gradSchools[i].setRank(gradSchools[i].getAcademics());
+      } else if (input.equals("Research")) {
+        gradSchools[i].setRank(gradSchools[i].getResearch());
+      } else if (input.equals("Publications")) {
+        gradSchools[i].setRank(gradSchools[i].getPublications());
+      } else {
+        gradSchools[i].setRank(gradSchools[i].getRating());
+      }
+    }
+    sortArray(gradSchools);
+//    for (int i=0; i<count)
+  }
+
+  // help method
+  public void sortArray (School[] schoolList) {
+    int maxRankValue;    // maximum integer so far
+    int maxIndex;  // index of maximum integer
+    int i, j;
+    for (j = count - 1; j > 0; j--) {
+      maxIndex = 0;
+      maxRankValue = schoolList[0].getRank();
+      for (i = 1; i <= j; i++) 
+        if (schoolList[i].getRank() > maxRankValue) {
+          maxRankValue = schoolList[i].getRank();
+          maxIndex = i;
+        }
+      swap(schoolList, maxIndex, j);
+    }
+  }
+  
+/** 
+  * exchanges the contents of locations i and j in the input array
+  */
+  private static void swap (School[] schoolList, int i, int j) {
+    School temp = schoolList[i];
+    schoolList[i] =schoolList[j];
+    schoolList[j] =temp;
+  }
+  
+  public static void main (String[] args) {
+    
+  }
+  
+}
+    
+  
+    
+    
+    
+    
+    

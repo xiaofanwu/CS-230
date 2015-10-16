@@ -1,0 +1,24 @@
+/* Transactions.java
+ * CS230 Assignment #3 Task2
+ * Written by: Shiping Xu & Xiaofan Wu
+ */
+
+// test cases
+public class Transactions {
+  
+  public static void main (String[] args) {
+    CheckingAccount cAccount1 = new CheckingAccount(30, 20, 40);
+    SavingsAccount sAccount1 = new SavingsAccount(30, 5.5);
+    
+    cAccount1.deposit(100);
+    sAccount1.deposit(100);
+    
+    cAccount1.withdraw(300);
+    
+    sAccount1.calculateBalance();
+    
+    System.out.println(cAccount1);
+    System.out.println(sAccount1);
+    
+  }
+}

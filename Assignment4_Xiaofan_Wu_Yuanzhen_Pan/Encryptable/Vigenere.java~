@@ -1,0 +1,105 @@
+import javax.swing.JOptionPane;
+public class Vigenere implements Encryptable{
+  
+  private String message;
+  private boolean isEncrypted;
+  private String password;
+  
+  public Vigenere(String message,String password){
+    this.message=message;
+    this.password=password;
+  }
+  
+  private void formatMessage(){
+    message=message.replaceAll("\\s","").toUpperCase();
+  }
+  
+  private int[] arrayOfShift(String password){
+    int[] list= new int[password.length()] ;
+    for (int i=0;i<password.length();i++){
+      list[i]=password.charAt(i)-65;
+    }  
+  return list;
+  }
+  public boolean getIsEncrypted(){
+    return isEncrypted;
+  }
+    
+  
+  public void encrypt(){
+    String encrypted="";
+    int[] results=arrayOfShift(password);
+    for (int i=0;i<message.length();i++){
+      int numb= message.charAt(i)+(results[i%password.length()]);
+      if (numb>90){
+      encrypted=encrypted + (char)(numb-26);
+      }else{
+        encrypted=encrypted + (char)(numb);
+      }
+    }
+    message=encrypted;
+    isEncrypted=true;
+  }                   
+                           
+                        
+  
+  public String decrypt(){
+    if (isEncrypted)
+    {
+    String unmasked="";
+    int[] results=arrayOfShift(password);
+    for (int i=0;i<message.length();i++){
+      int numb= message.charAt(i)-(results[i%password.length()]);
+      if (numb<65){
+      unmasked=unmasked + (char)(numb+26);
+      }else{
+        unmasked=unmasked + (char)(numb);
+      }
+      System.out.println(unmasked);
+  
+    }
+      message=unmasked;
+    isEncrypted=false;
+
+  }
+   return message;
+  }
+ 
+  
+    
+  public String toString(){
+    return message;
+  }
+  
+  
+  public static void main(String[] args){
+    String messageinput, passwordinput;
+    int decryptedY;
+
+    
+   
+     messageinput=JOptionPane.showInputDialog ("What is the message? ");
+     passwordinput=JOptionPane.showInputDialog ("What is the password?");
+     Vigenere message= new Vigenere(messageinput, passwordinput);
+     message.formatMessage();
+     message.encrypt();
+     
+     JOptionPane.showMessageDialog (null, message);
+     System.out.println ("The encrypted message is " + message);
+     decryptedY = JOptionPane.showConfirmDialog(null, "Do you want it decrypted?");
+
+      if (decryptedY == JOptionPane.YES_OPTION){
+        String decrypted=message.decrypt();
+        JOptionPane.showMessageDialog (null,decrypted);
+      }
+      else{
+        String thankyou="thank you for using this tool!";
+        JOptionPane.showMessageDialog (null, thankyou);
+      }
+        
+   
+  System.out.println(message);
+  
+  }
+}
+  

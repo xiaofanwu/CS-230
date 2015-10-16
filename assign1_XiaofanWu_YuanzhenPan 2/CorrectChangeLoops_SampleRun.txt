@@ -1,0 +1,19 @@
+How much money do you want to make change for?
+48.94
+2 $20 bills
+1 $5 bills
+3 $1 bills
+3 quarters
+1 dimes
+1 nickels
+4 pennies
+How much money do you want to make change for?
+11.22
+0 $20 bills
+2 $5 bills
+1 $1 bills
+0 quarters
+2 dimes
+0 nickels
+2 pennies
+

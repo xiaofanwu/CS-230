@@ -1,0 +1,35 @@
+/* CheckingAccount.java
+ * CS230 Assignment #3 Task2
+ * Written by: Shiping Xu & Xiaofan Wu
+ * September 30th, 2015
+ */
+
+import java.text.DecimalFormat; // used to format output
+
+public class CheckingAccount extends Account {
+  // instance variables
+  private double minimumBalance;
+  private double overdraftFee;
+  
+  // constructor
+  public CheckingAccount(double deposit, double minimum, double fee) {
+    super(deposit);
+    this.minimumBalance = minimum; 
+    this.overdraftFee = fee;
+  }
+  
+  // withdraw method 
+  public void withdraw(double amount) {
+      accountBalance = accountBalance - amount;  
+      if (accountBalance < minimumBalance)
+        accountBalance = accountBalance-overdraftFee;     
+  }
+                         
+  // toString() displays everything Account displays plus minimum balance                                              
+  public String toString() {
+    DecimalFormat fmt = new DecimalFormat("0.###");
+    String s = super.toString();
+    s += "\nMinimum balance: " + fmt.format(this.minimumBalance);
+    return s;
+  }    
+} 

@@ -1,0 +1,75 @@
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 10
+Overall rating: 120
+Current rank: 0
+
+********
+School name: Wellesley
+Academic program: 9
+Effectiveness in educating research scholars: 9
+Impact of its faculty publications: 9
+Overall rating: 108
+Current rank: 0
+
+Please provide 3 weights (1..5) for Academics, Research and Publications
+There are 4 schools in the database:
+
+********
+School name: MIT
+Academic program: 10
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 7
+Overall rating: 111
+Current rank: 0
+
+********
+School name: Stanford
+Academic program: 8
+Effectiveness in educating research scholars: 10
+Impact of its faculty publications: 9
+Overall rating: 107
+Current rank: 0
+
+********
+School name: CMU
+Academic program: 7
+Effectiveness in educating research scholars: 8
+Impact of its faculty publications: 6
+Overall rating: 85
+Current rank: 0
+
+********
+School name: UC Berkeley
+Academic program: 9
+Effectiveness in educating research scholars: 9
+Impact of its faculty publications: 9
+Overall rating: 108
+Current rank: 0
+
+
+Ranking of schools from highest to lowest using Academics as a factor: 
+MIT
+UC Berkeley
+Stanford
+CMU
+
+Ranking of schools from highest to lowest using Research as a factor: 
+Stanford
+MIT
+UC Berkeley
+CMU
+
+Ranking of schools from highest to lowest using Publications as a factor: 
+UC Berkeley
+Stanford
+MIT
+CMU
+
+Ranking of schools from highest to lowest using Overall as a factor: 
+MIT
+UC Berkeley
+Stanford
+CMU
