@@ -1,0 +1,16 @@
+﻿Labor Plan
+
+
+Who’s responsible for which class: 
+
+
+Xiaofan: Main, Settings Page, CardGame, LearnPage/Algorithm
+Yuanzhen: AboutPage, DiagnosePage/Algorithm, LearnPage/Algorithm
+
+
+TimeLine:
+
+
+12/8-11      Finish Main, AboutPage, Setting, DiagosePage
+12/11-15    Work on CardGame,LearnPage
+12/15-18    Testing Phase

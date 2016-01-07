@@ -1,0 +1,53 @@
+/* GSAboutPanel.java
+ * CS230 Assignment5 Task3
+ * Written by: Shiping Xu & Xiaofan Wu
+ * 10/25/2015
+ */
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class GSAboutPanel extends JPanel {
+  // sets up this panel with name of the creators and instructions  
+  
+  public GSAboutPanel() {
+    setPreferredSize(new Dimension(850,750)); // set the 
+    setBackground (Color.green); //set background color to be green
+    
+    ImageIcon icon = createImageIcon("image/logos.jpg", "school logos");
+
+    JLabel instructionsLabel = new JLabel ("<html><span style='font-size:11px'><b>COOLEST Graduate Schools Ranking program designed by " +
+                                       "Shiping Xu & Xiaofan Wu</b><br>" +
+                                      "This is a program designed for you to add the schools you are interested in and rank the schools" +
+                                      " with their overall ratings.<br><b><font color='red'>HOW TO USE THIS PROGRAM?</font></b><br>1. Go to “Add School” tab. Type " +
+                                      "in a school name that you are interested in with its academics score, research score <br>and publications "+
+                                      "score.<br>Click <b>“Add School”</b> button and you’ll see the school’s information displayed at the "+
+                                      "bottom.<br>2. Click on “Evaluate” tab. Scroll the sliders to set weight of each of the evaluation "+
+                                      "factor.<br>Each school’s overall rating was be calculated as the weighted sum ?(weight*factor), of " +
+                                      "the three evaluation factors.<br>You will see in the information box below a list of ranked schools " +
+                                      "according to overall ratings.<br><br><br></span></html>");
+    JLabel imageLabel = new JLabel(icon);
+    add(instructionsLabel);
+    add(imageLabel);
+
+
+  
+  }
+  
+   /** 
+   * Creates and returns an ImageIcon out of an image file.
+   * @param path The path to the imagefile relevant to the current file.
+   * @param description A short description to the image.
+   * @return ImageIcon An ImageIcon, or null if the path was invalid. 
+   */
+  private ImageIcon createImageIcon(String path, String description) {
+    java.net.URL imgURL = GradSchools.class.getResource(path);
+    if (imgURL != null) {
+      return new ImageIcon(imgURL, description);
+    } else {
+      System.err.println("Couldn't find file: " + path);
+      return null;
+    }
+  }
+}

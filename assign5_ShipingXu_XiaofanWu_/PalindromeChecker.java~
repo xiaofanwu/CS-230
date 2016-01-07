@@ -1,0 +1,75 @@
+/* PalindromeChecker.java
+ * CS230 Assignment #5 Task 2
+ * Written by: Shiping Xu & Xiaofan Wu
+ * 10/25/2015
+ */
+
+// throw an invalid input exception
+import javafoundations.LinkedStack;
+//import javafoundations.exceptions.*;
+
+public class PalindromeChecker {  
+  String string; // the string to check for palindrome
+  LinkedStack<Character> stack; // the stack to be used in the process
+  
+  // constructor
+  public PalindromeChecker() {
+    
+    stack = new LinkedStack<Character>();
+    string = "";
+  }
+  
+  // empty the stack
+  private void cleanStack() {
+    while (!stack.isEmpty()) stack.pop(); // let the stack point to a different
+  }
+  
+  // returns true if the string is a palindrome
+  public boolean checkPalindrome() {
+    cleanStack();
+    char expression[] = string.toCharArray();
+    for (int i=0; i<string.length(); i++) {
+      stack.push(new Character(expression[i]));
+    }
+    
+    
+    for (int i=0; i<string.length();i++) {
+      if (!(string.charAt(i) == stack.pop()))
+        return false;
+    }
+    return true;
+  }
+  
+  public void setString(String s1) {
+    string = s1;
+  }
+  
+  public String getString() {
+    return string;
+  }
+  
+  // toString method
+  public String toString() {
+    String s = "Word '" + string + "'";
+    return s;
+  }
+  
+  
+  // main method
+  public static void main (String[] args) {
+    PalindromeChecker p1 = new PalindromeChecker();
+    
+    if (args.length == 1) {
+      p1.setString(args[0].toLowerCase());
+      if (p1.checkPalindrome()) 
+        System.out.println(p1 + " is a palindrome.");
+      else 
+        System.out.println(p1 + " isn't a palindrome.");
+    } else {
+      System.out.println("Please enter one word that you would like to test:");
+    }
+    
+  }
+    
+  
+}

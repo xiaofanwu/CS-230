@@ -1,0 +1,96 @@
+/* GSEvaluatePanel.java
+ * CS230 Assignment5 Task3
+ * Written by: Shiping Xu & Xiaofan Wu
+ * 10/25/2015
+ */
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
+
+public class GSEvaluatePanel extends JPanel {
+  // instance variables
+  private GradSchools schoolList;
+  private JPanel controls, infoPanel;
+  private JSlider academicsSlider, researchSlider, pubsSlider;
+  private JLabel academicsLabel, researchLabel, pubsLabel, infoLabel;
+  
+ 
+  public GSEvaluatePanel(GradSchools gs) {
+    
+    setLayout(new BoxLayout (this, BoxLayout.Y_AXIS));
+    
+    this.schoolList = gs;
+    academicsSlider = new JSlider (JSlider.HORIZONTAL, 0, 5, 0);
+    academicsSlider.setMajorTickSpacing (5);
+    academicsSlider.setMinorTickSpacing (1);
+    academicsSlider.setPaintTicks (true);      
+    academicsSlider.setPaintLabels (true);
+
+    researchSlider = new JSlider (JSlider.HORIZONTAL, 0, 5, 0);
+    researchSlider.setMajorTickSpacing (5);
+    researchSlider.setMinorTickSpacing (1);    
+    researchSlider.setPaintTicks (true);
+    researchSlider.setPaintLabels (true);
+
+    pubsSlider = new JSlider (JSlider.HORIZONTAL, 0, 5, 0);
+    pubsSlider.setMajorTickSpacing (5);
+    pubsSlider.setMinorTickSpacing (1);
+    pubsSlider.setPaintTicks (true);
+    pubsSlider.setPaintLabels (true);
+
+    academicsLabel = new JLabel ("Academics: 0");
+    researchLabel = new JLabel ("Research: 0");
+    pubsLabel = new JLabel ("Publications: 0");
+    
+    controls = new JPanel();
+    BoxLayout layout = new BoxLayout (controls, BoxLayout.X_AXIS);
+    controls.setLayout (layout);
+    controls.add (academicsLabel);
+    controls.add (academicsSlider);
+    controls.add (Box.createRigidArea (new Dimension (0, 20)));
+    controls.add (researchLabel);
+    controls.add (researchSlider);
+    controls.add (Box.createRigidArea (new Dimension (0, 20)));
+    controls.add (pubsLabel);     
+    controls.add (pubsSlider);
+      
+    infoPanel = new JPanel();
+    infoLabel = new JLabel("Please use the sliders to assign weights in each category.");
+    infoPanel.add(infoLabel);
+    
+    add(controls);
+    add(infoPanel);   
+    
+    SliderListener listener = new SliderListener();
+    academicsSlider.addChangeListener(listener);
+    researchSlider.addChangeListener(listener);
+    pubsSlider.addChangeListener(listener);
+  }
+  
+  private class SliderListener implements ChangeListener {
+    
+    private int weightA, weightR, weightP;
+    
+    public void stateChanged (ChangeEvent event) {
+      
+      weightA = academicsSlider.getValue();
+      weightR = researchSlider.getValue();
+      weightP = pubsSlider.getValue();
+      
+      academicsLabel.setText("Academics: " + weightA);
+      researchLabel.setText("Research: " + weightR);
+      pubsLabel.setText("Publications: " + weightP);
+      
+      schoolList.computeRatings(weightA, weightR, weightP);
+      schoolList.rankSchool("Overall");
+      
+      infoLabel.setText(schoolList.toString());
+      infoLabel.setFont(new Font("Arial", Font.ITALIC, 16));
+      infoLabel.setForeground(Color.magenta);
+    }
+  }
+  
+    
+}

@@ -1,0 +1,32 @@
+/* LinkedStackDriver.java
+ * CS230 Assignment #5 Task1
+ * Written by: Shiping Xu & Xiaofan Wu
+ * 10/25/2015
+ */
+
+import javafoundations.LinkedStack;
+
+public class LinkedStackDriver {
+  
+  public static void main (String[] args) {
+    LinkedStack<String> l = new LinkedStack<String>();
+    l.push("cs230");
+    l.push("is");
+    l.push("wonderful");
+    System.out.println(l);
+    System.out.println(l.peek());
+    System.out.println(l.size());
+    
+    System.out.println(l.pop());
+    
+    System.out.println(l.peek());
+    System.out.println(l.size());
+    
+    System.out.println(l.pop());
+    System.out.println(l.pop());
+    System.out.println(l.isEmpty());
+    
+  }
+  
+}
+                              

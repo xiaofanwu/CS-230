@@ -1,0 +1,85 @@
+empty is false: false
+empty is true: true
+Number of vertices (5): 5
+Number of ars (7): 7
+isArc A -> C? (TRUE) true
+isEdge D <-> E? (false) false
+isArc D <-> E? (true) true
+isArc E <-> D? (False) false
+ Arcs
+------
+ i	A	B	C	D	E	
+A	-	1	1	-	-	
+B	1	-	1	-	-	
+C	1	1	-	-	-	
+D	-	-	-	-	1	
+E	-	-	-	-	-	
+
+ Arcs
+------
+ i	B	C	D	E	
+B	-	1	-	-	
+C	1	-	-	-	
+D	-	-	-	-	
+E	-	-	-	1	
+
+Number of vertices (4): 4
+Number of arcs (5): 5
+ Arcs
+------
+ i	B	C	D	E	
+B	-	1	1	-	
+C	1	-	-	-	
+D	1	-	-	-	
+E	-	-	-	1	
+
+Adj to B:([C,D]) [C, D]
+Adj to C: ([B])[B]
+ Arcs
+------
+ i	B	C	D	E	A	
+B	-	1	1	-	-	
+C	1	-	-	-	-	
+D	1	-	-	-	-	
+E	-	-	-	1	-	
+A	-	-	-	-	-	
+
+ Arcs
+------
+ i	B	C	D	E	A	F	G	H	I	J	K	
+B	-	1	1	-	-	-	-	-	-	-	-	
+C	1	-	-	-	-	-	-	-	-	-	-	
+D	1	-	-	-	-	-	-	-	-	-	-	
+E	-	-	-	1	-	-	-	-	-	-	-	
+A	-	-	-	-	-	-	-	-	-	-	-	
+F	-	-	-	-	-	-	1	-	-	-	-	
+G	-	-	-	-	-	-	-	1	-	-	-	
+H	-	-	-	-	-	-	-	-	1	-	-	
+I	-	-	-	-	-	-	-	-	-	1	-	
+J	-	-	-	-	-	-	-	-	-	-	1	
+K	-	-	-	-	1	-	-	-	-	-	-	
+
+should be undirected falsefalse
+should be undirected truetrue
+should be true: true
+should be true: true
+should be false: false
+should be false: false
+should be B: [B]
+ Arcs
+------
+ i	1	2	3	4	5	6	7	8	9	10	11	
+1	-	-	-	-	-	-	-	-	-	-	-	
+2	-	-	-	-	-	-	-	-	-	-	-	
+3	-	-	-	-	-	-	-	-	-	-	-	
+4	-	-	-	-	-	-	-	-	-	-	-	
+5	-	-	-	-	-	-	-	-	-	-	-	
+6	-	-	-	-	-	-	-	-	-	-	-	
+7	-	-	-	-	-	-	-	-	-	-	-	
+8	-	-	-	-	-	-	-	-	-	-	-	
+9	-	-	-	-	-	-	-	-	-	-	-	
+10	-	-	-	-	-	-	-	-	-	-	-	
+11	-	-	-	-	-	-	-	-	-	-	-	
+
+should be 11: 11
+should be 0: 0

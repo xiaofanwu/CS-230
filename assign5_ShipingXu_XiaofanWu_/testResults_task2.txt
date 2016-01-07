@@ -1,0 +1,5 @@
+Please enter one word that you would like to test:
+Word 'madam' is a palindrome.
+Word 'melon' isn't a palindrome.
+Word '12321' is a palindrome.
+Word 'amanaplanacanalpanama' is a palindrome.

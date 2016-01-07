@@ -1,0 +1,13 @@
+<top of stack>
+wonderful
+is
+cs230
+<bottom of stack>
+wonderful
+3
+wonderful
+is
+2
+is
+cs230
+true

@@ -1,0 +1,463 @@
+/* AdjMatGraph.java
+ * Xiaofan Wu and Brenda Ji
+ * CS 230 
+ * Assignment 7: Task1 Graph Implementation
+ * November 15, 2015
+ * */
+
+import java.io.*;
+import java.util.*;
+
+public class AdjMatGraph<T> implements Graph<T>{
+  
+  // Instance Vars
+  private int n;
+  private T[] vertices;
+  private boolean[][] arcs;
+  
+  private final int ARRAY_SIZE_DEFAULT= 10;
+  private final int NOT_FOUND = -1;
+  
+  /* Constructor 1: 
+   * Takes no arguments and initializes vertices array of size 10 and and arcs 
+   * boolean double array of size 10 by 10. True indicates that there is an arc 
+   * and false indicates that there is no arc between the two vertices. 
+   */ 
+  public AdjMatGraph(){
+    n = 0; 
+    vertices = (T[])new Object[ARRAY_SIZE_DEFAULT];
+    arcs = new boolean[ARRAY_SIZE_DEFAULT][ARRAY_SIZE_DEFAULT];
+  }
+  
+  /* Constructor 2:
+   * Reads in information about a graph from a .tgf file 
+   */ 
+  public AdjMatGraph(String filename){
+    
+    this(); // Begins by calling first constructor and creating an empty graph 
+    
+    try{ // must catch exception in the case that the file given does not exist
+      
+      // prepare tgf.file using Scanner 
+      Scanner scan = new Scanner(new File(filename));
+      
+      //read vertices info and add them to vertices[]
+      while(!(scan.next().equals("#"))){
+        String vertex = scan.next();
+        // takes in the node's name as a String 
+        addVertex((T)vertex);
+      }
+      
+      // read arcs in & add to arcs[][]
+      // Arcs between vertices are represented as numbers in tgf file, so an arc
+      // between 1 and 2 in the tgf file is really an arc between vertices[0] 
+      // and vertices[1] in our implementation
+      while (scan.hasNext()){
+        int start = scan.nextInt(); // first node
+        int end = scan.nextInt(); // second node
+        addArc(vertices[start-1],vertices[end-1]);
+      }
+      
+      // close Scanner scan 
+      scan.close();
+    }
+    
+    //catch
+    catch(IOException ex){
+      System.out.println("File does not exist."); 
+    }
+  }
+  
+  /** Inserts an arc between two vertices of this graph,
+    * if the vertices exist. Else it does not change the graph. */
+  public void addVertex (T vertex){
+            
+
+    
+    if (vertices.length==n) // first checks if there is enough room in the array
+      expandArray();
+    
+    
+
+    
+    if (!(isVertex(vertex))){
+      vertices[n] = (T)vertex; // add vertex at n (next open space)
+      n++; // record the increase in number of vertices/nodes
+    }
+  }
+  
+  /** If the array is full, we want to double the array size by adding 
+    * all elements in vertices to a new array twice the size of the orignal, and
+    * then point vertices to the temp array. We also want to increase the size of 
+    * double array by creating a temporary double array and copying everything 
+    * over before pointing arcs to the temp2D double array. */
+  private void expandArray(){
+    
+    // create new larger array and cast T[]
+    T[] temp=(T[])new Object[vertices.length*2]; 
+    // create temp boolean double array 
+    boolean[][] temp2D=new boolean[vertices.length*2][vertices.length*2];
+    
+    // copy vertices over
+    for (int i=0;i<vertices.length;i++){
+      temp[i]=vertices[i];
+    }
+    vertices=temp;
+    
+    // copy boolean values over 
+    for (int i=0;i<arcs.length;i++){
+      for (int j=0;j<arcs.length;j++){
+        temp2D[i][j]=arcs[i][j];
+      }
+    }
+    arcs=temp2D;
+  }
+  
+  /* Removes a single vertex with the given value from this graph.
+   * If the vertex does not exist, it does not change the graph. */
+  public void removeVertex (T vertex){
+    if (isVertex(vertex)){ // first checks if the vertex exists 
+      int index = getIndex(vertex); // get index of vertex in vertices
+      
+      //remove the vertex from the array
+      for (int i = index; i < n-1; i++){
+        vertices[i] = vertices[i+1]; // shifting vertices back by 1 spot 
+      }
+      
+      //remove the entire column and row of booleans to remove all 
+      // connections (arcs and edges)
+      // first loop removes the row: want to start at the index and move all 
+      // the booleans after that index to their new spaces (back 1 spot)
+      for (int i = index; i < n-1; i++){
+        for (int j=0;j<n-1;j++)
+          arcs[i][j] = arcs[i+1][j];
+      }
+     
+      
+
+      // second loop removes the column: loop through each row and move the 
+      // value in arcs back one spot. In this case, we also want to conserve 
+      // the the original values before the index and move all the values after 
+      // the index back one spot. 
+      for (int k = 0; k < n-1; k++){  
+        for (int j=index;j<n-1;j++)
+          arcs[k][j]=arcs[k][j+1];
+      }
+ 
+      
+       for (int l=0;l<n;l++){
+         //System.out.println(arcs[(n-1)][l]);
+         arcs[(n-1)][l]=false;
+         arcs[l][n-1]=false;
+      }
+     
+       
+      n--; // decrease count of vertices 
+    }
+  }
+  
+  /** Inserts an arc between two vertices of this graph,
+    * if the vertices exist. Else it does not change the graph. */
+  public void addArc(T vertex1, T vertex2){
+    // check if vertex1 and vertex2 are vertices
+    if (isVertex(vertex1) && isVertex(vertex2)){ 
+      arcs[getIndex(vertex1)][getIndex(vertex2)] = true; // change value to true
+    }
+  }
+  
+  /** Inserts an edge between two vertices of this graph,
+    * if the vertices exist. Else it does not change the graph. */
+  public void addEdge(T vertex1, T vertex2){ 
+    if (isVertex(vertex1) && isVertex(vertex2)){
+      // make both directions between two vertices true
+      arcs[getIndex(vertex1)][getIndex(vertex2)] = true; 
+      arcs[getIndex(vertex2)][getIndex(vertex1)] = true;
+    }
+  }
+  
+  /** Removes an arc between two vertices of this graph,
+    * if the vertices exist. Else it does not change the graph. */
+  public void removeArc(T vertex1, T vertex2){ 
+    if (isVertex(vertex1) && isVertex(vertex2)){
+      // make booolean value false     
+      arcs[getIndex(vertex1)][getIndex(vertex2)] = false; 
+    }
+  } 
+  
+  /** Removes an edge between two vertices of this graph,
+    * if the vertices exist. Else it does not change the graph. */
+  public void removeEdge(T vertex1, T vertex2){ 
+    if (isVertex(vertex1) && isVertex(vertex2)){
+      // make values of both directions false  
+      arcs[getIndex(vertex1)][getIndex(vertex2)] = false;
+      arcs[getIndex(vertex2)][getIndex(vertex1)] = false;
+    }
+  } 
+  
+  /** Returns the index of a given vertex if it matches a vertex in vertices.
+    * Otherwise returns -1 if the given vertex is not found. */ 
+  private int getIndex(T vertex){
+    for (int i = 0; i < n; i++){
+      if (vertex.equals(vertices[i]))
+        return i;
+    }
+    return NOT_FOUND;
+  }
+  
+  /** Returns whether or not the given vertex is a vertex in the array 
+    * vertices. */
+  private boolean isVertex(T vertex){
+    for (int i = 0; i < n; i++){ // loop through vertices 
+      if (vertices[i].equals(vertex)) // check if they are equal 
+        return true;
+    }
+    return false;
+  }
+  
+  /** Returns true if this graph is empty, false otherwise. */
+  public boolean isEmpty(){
+    return (n==0); // checks number of vertices is 0
+  }
+  
+  /** Returns the number of vertices in this graph. */
+  public int n(){
+    return n;
+  }
+  
+  /** Returns the number of arcs in this graph. */
+  public int m(){
+    int count=0;
+    for (int i=0;i<n;i++){
+      for (int j=0; j<n;j++){
+        if (arcs[i][j])
+          count+=1; // only increases the count if boolean value is true    
+      }
+    }
+    return count;  
+  }
+  
+  /** Returns true iff a directed edge exists b/w given vertices */
+  public boolean isArc(T vertex1, T vertex2){
+    return (arcs[getIndex(vertex1)][getIndex(vertex2)]);
+  }
+  
+  /** Returns true iff an edge exists between two given vertices
+    * which means that two corresponding arcs exist in the graph */
+  public boolean isEdge(T vertex1, T vertex2){
+    // compares both directions between the two vertices
+    return ((arcs[getIndex(vertex1)][getIndex(vertex2)]) && (arcs[getIndex(vertex2)][getIndex(vertex1)]));
+  }
+  
+  /** Returns true IFF the graph is undirected, that is, for every
+    * pair of nodes i,j for which there is an arc, the opposite arc
+    * is also present in the graph.  */
+  public boolean isUndirected(){
+    for (int i = 0; i < n; i++){
+      for (int j = 0; j < n; j++){
+        // There are two conditions bewteen two vertices that must be satisfied 
+        // for the whole graph to be undirected: 
+        // there is an arc in both directions, or 
+        // there is no connection between the two vertices. 
+        // In either case, the boolean values are the same. 
+        if ((isArc(vertices[i],vertices[j])) != (isArc(vertices[j],vertices[i])))
+          return false;
+      }
+    }
+    return true;
+  }
+  
+  /** Retrieve from a graph the vertices adjacent to vertex v.
+    * Assume that the vertex is in the graph */
+  // returns the successor of a vertex in a LinkedList by looping through the 
+  // array and checking if there is an arc from the given vertex to any other 
+  // vertex in the array.
+  public LinkedList<T> getSuccessors(T vertex){
+    LinkedList<T> temp=new LinkedList<T>();
+    for (int i=0;i<n;i++){
+      if (isArc(vertex,vertices[i]))
+        temp.add(vertices[i]);
+    }
+    return temp;
+  }
+  
+  /** Retrieve from a graph the vertices x preceding vertex v (x->v)
+    * and returns them onto a linked list */
+  // returns the predecessors of a vertex in a LinkedList by looping through
+  // the array and checking if there is an arc from the other vertices to the 
+  // given vertex. 
+  public LinkedList<T> getPredecessors(T vertex){
+    LinkedList<T> temp = new LinkedList<T>();
+    for (int i=0;i<n;i++){
+      if (isArc(vertices[i],vertex))
+        temp.add(vertices[i]);
+    }
+    return temp;
+  }
+  
+  /** Saves the current graph into a .tgf file.
+    * If it cannot save the file, a message is printed. */
+  public void saveTGF(String filename) {
+    
+    try{ // Tries to save the file first 
+      // prepare filename for writing 
+      PrintWriter writer = new PrintWriter(filename);
+      
+      
+      // write into it the vertices
+      for (int i = 0; i < n; i++){
+        writer.println((i+1) + " " + vertices[i]);
+      }
+      
+      // write the #
+      writer.println("#");
+      
+      // write the arcs
+      for (int i = 0; i < n; i++){
+        for (int j = 0; j < n; j++){
+          if (arcs[i][j])
+            writer.println((i+1) + " " + (j+1));
+        }
+      }
+      
+      // close the file stream 
+      writer.close();
+    }
+    
+    // If the file cannot be saved, then a message is printed 
+    catch (FileNotFoundException ex){
+      System.out.println("File not accessible.");
+    }
+  }
+
+  /* String representation of the graph. */ 
+  public String toString(){
+    
+   String result;
+   result=" Arcs\n------\n i\t";
+    
+    // first print all the vertices 
+    for (int i = 0; i < n; i++){
+      result+=vertices[i]+"\t";
+    }
+    result+="\n";
+    
+    // then print the arcs and their values 
+    for (int i = 0; i < n; i++){
+      result+=vertices[i]+ "\t";
+      for (int j = 0; j < n; j++){
+        if (arcs[i][j]) // 1 if the value is true
+          result+="1" + "\t";
+        else
+          result+="-" + "\t"; // - if the value is false 
+      }
+      result=result+"\n";
+    }
+    return result;
+  }
+  
+  
+  
+
+  
+ 
+  
+// Main method for testing 
+  public static void main(String[] args){
+
+    AdjMatGraph<String> example = new AdjMatGraph<String>("testcase.tgf");
+    AdjMatGraph<String> empty = new AdjMatGraph<String>();
+    
+    
+    System.out.println("empty is false: "+example.isEmpty());
+    System.out.println("empty is true: "+empty.isEmpty());
+    
+
+    
+    System.out.println("Number of vertices (5): "+ example.n());
+    System.out.println("Number of ars (7): "+ example.m());
+    System.out.println("isArc A -> C? (TRUE) " + example.isArc("A","C"));
+    System.out.println("isEdge D <-> E? (false) " + example.isEdge("D","E"));
+    System.out.println("isArc D <-> E? (true) " + example.isArc("D","E"));
+    System.out.println("isArc E <-> D? (False) " + example.isArc("E","D"));
+
+  
+    
+    System.out.println(example);
+    
+    example.removeVertex("A");
+    
+    System.out.println(example);
+
+    
+    
+    example.addEdge("B","D");
+    System.out.println("Number of vertices (4): "+ example.n());
+    System.out.println("Number of arcs (5): "+ example.m());
+    System.out.println(example);
+    System.out.println("Adj to B:([C,D]) " + example.getSuccessors("B"));
+    System.out.println("Adj to C: ([B])" + example.getSuccessors("C"));
+    
+    example.addVertex("A");
+     //if duplicate, won't add 
+    example.addVertex("B");
+    
+    System.out.println(example);
+    
+    example.saveTGF("BCDEA.tgf");
+    String[] examplever={"F","G","H","I","J","K"};
+    
+    //add the vertices
+    for (int i=0;i<examplever.length;i++)
+      example.addVertex(examplever[i]);
+
+    //add the Arcs
+    for (int i=0;i<examplever.length-1;i++)
+      example.addArc(examplever[i],examplever[i+1]);
+    
+    example.addArc("K","A");
+    System.out.println(example);
+    
+    //test undirected
+    System.out.println("should be undirected false" + example.isUndirected());
+    AdjMatGraph<String> undirected = new AdjMatGraph<String>("undirected.tgf");
+    System.out.println("should be undirected true" + undirected.isUndirected());
+    
+
+    //test removeArc and removeEdge
+    example.addArc("K","B");
+    example.addEdge("G","J");
+    System.out.println("should be true: "+ example.isArc("K","B"));
+    System.out.println("should be true: "+ example.isEdge("G","J"));
+    example.removeArc("K","B");
+    example.removeEdge("G","J");
+    System.out.println("should be false: "+ example.isArc("K","B"));
+    System.out.println("should be false: "+ example.isEdge("G","J"));
+    
+    //test getPredecessors
+    System.out.println("should be B: " +example.getPredecessors("C"));
+
+    
+    
+    
+    
+    //test the second constructor
+    AdjMatGraph<Integer> t1 = new AdjMatGraph<Integer>();
+    //test our expandArray method and the other type instead of just String
+    t1.addVertex(1);
+    t1.addVertex(2);
+    t1.addVertex(3);
+    t1.addVertex(4);
+    t1.addVertex(5);
+    t1.addVertex(6);
+    t1.addVertex(7);
+    t1.addVertex(8);
+    t1.addVertex(9);
+    t1.addVertex(10);
+    t1.addVertex(11);
+    System.out.println(t1);
+    System.out.println("should be 11: " + t1.n());
+    System.out.println("should be 0: " + t1.m());
+
+  }
+  
+}
